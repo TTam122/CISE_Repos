@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]  # or [18.x]
 
     steps:
       - name: Checkout repository
@@ -23,14 +23,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
+      - name: install dependencies
         run: npm install
-        working-directory: worksheet2/my-nest-app
       
       - name: Run the tests
         run: npm test
-        working-directory: worksheet2/my-nest-app
 
       - name: Build
         run: npm run build
-        working-directory: worksheet2/my-nest-app
