@@ -28,6 +28,8 @@ jobs:
       
       - name: Run the tests
         run: npm test
+        working-directory: ./my-nest-app
 
       - name: Build
         run: npm run build
+        working-directory: ./my-nest-app
